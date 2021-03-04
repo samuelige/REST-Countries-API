@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  --bg: hsl(0, 0%, 98%);
+  --color-text: hsl(200, 15%, 8%);
+  --color-darkBlue-text: hsl(0, 0%, 100%);
+  --color-input-text: hsl(0, 0%, 52%);
+  --color-darkGray: hsl(0, 0%, 52%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-inset-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.01),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+html[data-theme="dark"] {
+  --bg: hsl(207, 26%, 17%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-darkBlue-text: hsl(200, 15%, 8%);
+  --color-input-text: hsl(0, 0%, 52%);
+  --color-darkGray: hsl(0, 0%, 52%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-inset-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.01),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+body {
+  background-color: var(--bg);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--color-text);
+}
+
+/* Global Attributes */
+
+/* App */
+.App {
+  width: inherit;
+  height: inherit;
+}
+
+/* Header */
+.header {
+  width: inherit;
+  background: var(--color-darkBlue-text);
+  height: 80px;
+  padding: 1.4% 7% 3% 7%;
+}
+
+.header > .moonIcon-and-DarkModeText {
+  float: right;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.8% 0px 0px 0px;
+}
+
+.header > strong {
+  font-size: 25px;
+}
+
+.header > .moonIcon-and-DarkModeText > label > .fas {
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+label input[type="checkbox"] {
+  -webkit-appearance: none;
+}
+/*  */
+
+label input[type="checkbox"]:checked ~ .fas {
+  /*  */
+}
+
+.header > .moonIcon-and-DarkModeText > .darkMode {
+  margin: -3% 0px 0px 7px;
+  font-weight: bold;
+}
