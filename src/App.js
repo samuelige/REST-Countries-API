@@ -1,6 +1,7 @@
 
 import './index.css'
 import './Reset/reset.css'
+import Country from './UI/Custom-cards/Country';
 import Filter from './UI/Filter/Filter';
 import Header from './UI/Header/Header';
 import Search from './UI/Search/Search';
@@ -18,6 +19,10 @@ function App() {
             <Filter />
           </div>
         </div>
+        <div className="country-container">
+          <Country/>
+        </div>
+        
       </main>
     </div>
   );
