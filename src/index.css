@@ -40,7 +40,8 @@ body {
 .header,
 .search-input,
 .filter-region,
-.country {
+.country,
+.country-details-btn {
   background: var(--color-darkBlue-text);
 }
 
@@ -171,9 +172,11 @@ main {
 /* Country Container */
 .country {
   margin-top: 0px;
-  width: 18%;
+  width: 270px;
+  height: 330px;
   border-radius: 5px;
   box-shadow: 2px 5px 12px #d9d9d9;
+  cursor: pointer;
 }
 
 img {
@@ -183,7 +186,7 @@ img {
 
 .content {
   width: 100%;
-  height: 150px;
+  height: 100px;
   padding: 8% 0px 0px 10%;
 }
 
@@ -202,4 +205,96 @@ img {
 }
 .other-content > h5 > .item {
   color: var(--color-input-text);
+}
+
+/* Country Details Container */
+.country-details-container {
+  width: 100%;
+  height: 100px;
+}
+
+.country-details-btn {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 6% 0px 3% 0px;
+  width: 130px;
+  height: 40px;
+
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 5px 12px #d9d9d9;
+}
+
+.country-details-btn > .arrow {
+  font-size: 18px;
+  margin: 8.4% 2% 0px 35px;
+}
+.country-details-btn > button {
+  border: none;
+  background: transparent;
+  margin: 0px 0px 0px 0px;
+  font-size: 14px;
+  outline: none;
+  color: var(--color-input-text);
+}
+
+.country-details,
+.details-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country-details {
+  width: 100%;
+}
+
+.country-details > img,
+.left-content,
+.right-content,
+.details-container {
+  flex: 1;
+}
+.details-container {
+  width: 100%;
+  height: 100px;
+}
+
+.country-details > img {
+  width: 100%;
+  height: 430px;
+}
+
+.details-container {
+  padding: 6% 0px 0px 10%;
+}
+
+.details-container > .details > h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.details-content {
+  margin: 6% 0px 10% 0px;
+}
+
+.left-content > h5,
+.right-content > h5,
+.details > h5 {
+  margin: 0px 0px 3% 0px;
+  font-weight: bold;
+}
+.left-content > h5 > .item,
+.right-content > h5 > .item,
+.details > h5 > .item {
+  color: var(--color-input-text);
+}
+
+.details > h5 > .border-countries {
+  padding: 1% 5%;
+  margin: 0px 1%;
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px #d9d9d9;
 }
