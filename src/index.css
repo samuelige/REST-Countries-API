@@ -19,7 +19,7 @@ html[data-theme="dark"] {
   --bg: hsl(207, 26%, 17%);
   --color-text: hsl(0, 0%, 100%);
   --color-darkBlue-text: hsl(200, 15%, 8%);
-  --color-input-text: hsl(0, 0%, 52%);
+  --color-input-text: hsl(0, 0%, 100%);
   --color-darkGray: hsl(0, 0%, 52%);
   --color-white: hsl(0, 0%, 100%);
 
@@ -37,6 +37,11 @@ body {
 }
 
 /* Global Attributes */
+.header,
+.search-input,
+.filter-region {
+  background: var(--color-darkBlue-text);
+}
 
 /* App */
 .App {
@@ -47,25 +52,33 @@ body {
 /* Header */
 .header {
   width: inherit;
-  background: var(--color-darkBlue-text);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   height: 80px;
-  padding: 1.4% 7% 3% 7%;
+  padding: 1.6% 0px 3% 7%;
+  box-shadow: 0px 5px 9px #d9d9d9;
 }
 
 .header > .moonIcon-and-DarkModeText {
-  float: right;
+  margin: 0.8% 0px 0px 0px;
+  width: 15%;
   display: flex;
   flex-wrap: wrap;
-  margin: 0.8% 0px 0px 0px;
 }
 
 .header > strong {
   font-size: 25px;
 }
 
+.header > .moonIcon-and-DarkModeText > .darkMode {
+  width: 50%;
+}
+
 .header > .moonIcon-and-DarkModeText > label > .fas {
   cursor: pointer;
-  color: var(--color-text);
+  height: 40px;
+  margin: -12px 0px 0px 0px;
 }
 
 label input[type="checkbox"] {
@@ -78,6 +91,72 @@ label input[type="checkbox"]:checked ~ .fas {
 }
 
 .header > .moonIcon-and-DarkModeText > .darkMode {
-  margin: -3% 0px 0px 7px;
   font-weight: bold;
+}
+
+/* Main Tag */
+
+main {
+  width: 100%;
+  padding: 3% 7% 0px 6.5%;
+}
+
+.search-and-filter-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search-container {
+  width: 30%;
+}
+
+.filter-container {
+  width: 15%;
+}
+
+/* Search Input */
+.search-input {
+  width: 100%;
+  display: flex;
+  height: 50px;
+  padding: 0px 0px 0px 2%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--color-input-text);
+  box-shadow: 5px 5px 10px #d9d9d9;
+}
+
+.search-icon {
+  font-size: 25px;
+  margin: 4% 30px 0px 0px;
+}
+
+.search-input > input[type="text"] {
+  width: 100%;
+  height: inherit;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* ** Filter by Region** */
+.filter-region {
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  color: var(--color-input-text);
+  box-shadow: 5px 5px 10px #d9d9d9;
+}
+
+.filter-region > select {
+  width: 100%;
+  height: inherit;
+  border-radius: 5px;
+  outline: none;
+  padding: 0px 13px;
+  border: none;
 }
