@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import { loadDataReducer } from "../Reducer/reducer";
+import { getDetailReducer, loadDataReducer } from "../Reducer/reducer";
 
 const rootReducer = combineReducers({
-    loadCountries : loadDataReducer
+    loadCountries : loadDataReducer,
+    getDetailData : getDetailReducer
 })
 
 export {rootReducer}
