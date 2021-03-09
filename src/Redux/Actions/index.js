@@ -1,5 +1,5 @@
 import axios from "axios"
-import { COUNTRIES, COUNTRIES_DETAILS } from "../Constants"
+import { COUNTRIES, COUNTRIES_DETAILS, SEARCH_COUNTRIES, SEARCH_INPUT_VALUE } from "../Constants"
 
 const loadData = () => async (dispatch, getState) => {
     dispatch({type: COUNTRIES.LOAD_DATA});
@@ -26,4 +26,28 @@ const getDetails = (name) => async dispatch => {
     }
 }
 
-export {loadData, getDetails}
+const getSearchDetails = (countryName) => async dispatch => {
+    dispatch({type: SEARCH_COUNTRIES.SEARCH_DATA});
+
+    try {
+        const response = await axios.get(`https://restcountries.eu/rest/v2/name/${countryName}`);
+        const {data} = response
+        dispatch({type: SEARCH_COUNTRIES.SEARCH_SUCCESS, payload: data})
+    } catch (error) {
+        dispatch({type: SEARCH_COUNTRIES.SEARCH_ERROR, error})
+    }
+}
+
+const change = (playload) => ({
+    type : SEARCH_INPUT_VALUE.CHANGE,
+    // payload:e.target.value
+    payload: playload
+})
+
+const submit = (payload) =>  ({
+    type: SEARCH_INPUT_VALUE.SUBMIT ,
+    payload: payload
+})
+
+
+export {loadData, getDetails, getSearchDetails, change, submit}

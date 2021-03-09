@@ -33,7 +33,7 @@ const DetailsCard = ({otherprops}) => {
                             <div className="right-content">
                                 <h5>Top Level Domain: <span className="item">{otherprops.topLevelDomain[0]}</span></h5>
                                 <h5>Currencies: <span className="item">{otherprops.currencies[0].code}, {otherprops.currencies[0].name}, {otherprops.currencies[0].symbol}</span></h5>
-                                <h5>Languages: <span className="item">{otherprops.languages[0].name}, {otherprops.languages[1].name}, {otherprops.languages[2].name}</span></h5>
+                                <h5>Languages: <span className="item">{otherprops.languages[0].name}</span></h5>
                             </div>
                         </div>
                         <h5>Border Countries: <span className="item border-countries">{otherprops.borders[0]}</span> 

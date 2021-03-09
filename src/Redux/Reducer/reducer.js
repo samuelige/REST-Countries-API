@@ -1,4 +1,4 @@
-import { COUNTRIES, COUNTRIES_DETAILS } from "../Constants"
+import { COUNTRIES, COUNTRIES_DETAILS, SEARCH_COUNTRIES, SEARCH_INPUT_VALUE } from "../Constants"
 
 const listState = {
     countries : [],
@@ -10,6 +10,20 @@ const detailState = {
     countries : [],
     loading: false,
     error: null
+}
+
+const searchDetailState = {
+    countries : [],
+    loading: false,
+    error: null
+}
+
+const formState = {
+    search: ''
+}
+
+const resultState = {
+    searchResult: ''
 }
 
 
@@ -67,4 +81,57 @@ const getDetailReducer = ( state=detailState, action) => {
     }
 };
 
-export {loadDataReducer, getDetailReducer}
+const getSearchDetailReducer = ( state=searchDetailState, action) => {
+    switch (action.type) {
+        case SEARCH_COUNTRIES.SEARCH_DATA: 
+            return {
+                ...state,
+                loading: true,
+                error: null
+            };
+        case SEARCH_COUNTRIES.SEARCH_SUCCESS: 
+            return {
+                ...state,
+                loading: false,
+                countries: action.payload
+            };
+        case SEARCH_COUNTRIES.SEARCH_ERROR: 
+            return {
+                ...state,
+                loading: false,
+                error: action.error,
+                countries: []
+            };
+        default: 
+            return state;
+
+    }
+};
+
+const changeReducer = (state = formState, action) => {
+    switch(action.type) {
+        case SEARCH_INPUT_VALUE.CHANGE :
+            return {
+                ...state,
+                search: action.payload
+            }
+        default:
+            return state;
+    }
+}
+
+
+const submitReducer = (state= resultState, action) => {
+    switch(action.type) {
+        case SEARCH_INPUT_VALUE.SUBMIT :
+            return {
+                ...state,
+                searchResult: action.payload
+            } 
+        default:
+            return state;  
+    }
+    
+}
+
+export {loadDataReducer, getDetailReducer, getSearchDetailReducer, changeReducer, submitReducer}

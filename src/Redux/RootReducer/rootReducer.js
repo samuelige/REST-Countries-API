@@ -1,9 +1,12 @@
 import { combineReducers } from "redux";
-import { getDetailReducer, loadDataReducer } from "../Reducer/reducer";
+import { changeReducer, getDetailReducer, getSearchDetailReducer, loadDataReducer, submitReducer } from "../Reducer/reducer";
 
 const rootReducer = combineReducers({
     loadCountries : loadDataReducer,
-    getDetailData : getDetailReducer
+    getDetailData : getDetailReducer,
+    getSearchData : getSearchDetailReducer,
+    formData : changeReducer,
+    searchData : submitReducer
 })
 
 export {rootReducer}
