@@ -26,6 +26,10 @@ const resultState = {
     searchResult: ''
 }
 
+const openState = {
+    open : 'true'
+}
+
 
 const loadDataReducer = ( state= listState, action) => {
     switch (action.type) {
@@ -134,4 +138,23 @@ const submitReducer = (state= resultState, action) => {
     
 }
 
-export {loadDataReducer, getDetailReducer, getSearchDetailReducer, changeReducer, submitReducer}
+const openDetailsReducer = (state = openState, action) => {
+    switch(action.type) {
+        case COUNTRIES.OPEN_COUNTRY_DETAILS: 
+            return {
+                ...state,
+                open: action.payload
+            }
+        default:
+            return state
+    }
+}
+
+export {
+    loadDataReducer, 
+    getDetailReducer, 
+    getSearchDetailReducer, 
+    changeReducer, 
+    submitReducer,
+    openDetailsReducer
+}

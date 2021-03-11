@@ -9,7 +9,7 @@ const Navigator = () => {
         <Switch>
             <Route path={'/'} exact component={CountryList}/>
             <Route path={'/countryDetails/:countryDetails'} exact component={CountryDetails}/>
-            <Route path={'/searchResult'} exact component={searchResult} />
+            <Route path={'/searchResult/:searchResult'} exact component={searchResult} />
             <Redirect to={'/'}/>
         </Switch>
     )
