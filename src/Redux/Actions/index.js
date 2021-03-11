@@ -47,7 +47,12 @@ const change = (playload) => ({
 const submit = (payload) =>  ({
     type: SEARCH_INPUT_VALUE.SUBMIT ,
     payload: payload
-})
+});
 
 
-export {loadData, getDetails, getSearchDetails, change, submit}
+const openDetails = (payload) => ({
+    type: COUNTRIES.OPEN_COUNTRY_DETAILS,
+    payload: payload
+});
+
+export {loadData, getDetails, getSearchDetails, change, submit, openDetails}

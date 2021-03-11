@@ -1,13 +1,17 @@
 import React from 'react'
 import { BiArrowBack } from "react-icons/bi";
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import { openDetails } from '../../Redux/Actions';
 
 const DetailsCard = ({otherprops}) => {
 
     let history = useHistory();
+    const dispatch = useDispatch()
 
     const handleClose =() => {
         history.push("/");
+        dispatch(openDetails(true))
     }
 
     return (

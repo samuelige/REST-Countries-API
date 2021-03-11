@@ -1,13 +1,16 @@
 import React, { Fragment } from 'react'
 // import { useState } from 'react'
 import { BiArrowBack } from "react-icons/bi";
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import { openDetails } from '../../Redux/Actions';
 
 const ListCard = ({otherprops}) => {
     let history = useHistory();
-
+    const dispatch = useDispatch();
     const handleOPen =() => {
         history.push(`/countryDetails/${otherprops.name}`);
+        dispatch(openDetails(false))
     }
 
     

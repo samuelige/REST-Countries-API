@@ -5,22 +5,27 @@ import { useHistory } from 'react-router';
 import { change, submit } from '../../Redux/Actions';
 
 const Search = () => {
+   
     const dispatch = useDispatch()
     let history = useHistory()
 
     const searchContent = useSelector(state => state.formData)
     console.log(searchContent.search)
 
-    
+    const searchResultState = useSelector(state => state.searchData)
+    console.log(searchResultState)
+ 
 
     const handleChange = (e) => {
         dispatch(change(e.target.value))
-        history.push('/searchResult')
+        
+        // history.push(`/searchResult/${searchResultState.searchResult}`)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(submit(`${searchContent.search}`))
+        dispatch(submit(searchContent.search))
+        history.push(`/searchResult/:searchResult`)
         dispatch(change(" "));
     }
 
